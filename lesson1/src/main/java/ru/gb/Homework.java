@@ -119,7 +119,7 @@ public class Homework {
         System.out.println("Группировка по департаментам: " + groupByDepartment(people));
         System.out.println("Группировка по наименованиям департаментов: " + groupByDepartmentName(people));
         System.out.println("Самый старший в департаменте: " + getDepartmentOldestPerson(people));
-        System.out.println("Сотрудники с самыми нузкими зп в департаменте: " + cheapPersonsInDepartment(people));
+        System.out.println("Сотрудники с самыми низкими зп в департаменте: " + cheapPersonsInDepartment(people));
     }
 
     private static void initDepartments(List<Department> departments) {
