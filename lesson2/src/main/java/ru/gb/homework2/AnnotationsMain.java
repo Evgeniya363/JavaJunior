@@ -10,11 +10,11 @@ public class AnnotationsMain {
 
     public static void main(String[] args) {
         Person rndPerson = ObjectCreator.createObj(Person.class);
-        System.out.println("age1 = " + rndPerson.age1);
-        System.out.println("date = " + rndPerson.date);
-        System.out.println("instatn = " + rndPerson.instant);
-        System.out.println("localdate = " + rndPerson.localDate);
-        System.out.println("localdatetime = " + rndPerson.localDateTime);
+        System.out.println("Возраст = " + rndPerson.age1);
+        System.out.println("Дата рождения = " + rndPerson.date);
+        System.out.println("Дата регистрации = " + rndPerson.instant);
+        System.out.println("Лучший день = " + rndPerson.localDate);
+        System.out.println("Лунное затмение = " + rndPerson.localDateTime);
     }
 
     public static class Person {
@@ -25,12 +25,14 @@ public class AnnotationsMain {
         @Random(min = 50, max = 51) // рандомное число в диапазоне [50, 51) => 50
         private Integer age2;
 
-        @RandomDate()
+        @RandomDate(min=10000000L,max=1000689600000L,zone="Europe/Paris")
         private Date date;
         @RandomDate()
         private Instant instant;
         @RandomDate()
         private LocalDate localDate;
+        @RandomDate(min=1735689600000L,max=1735600000000L)
+        private LocalDate localDate1;
         @RandomDate()
         private LocalDateTime localDateTime;
     }

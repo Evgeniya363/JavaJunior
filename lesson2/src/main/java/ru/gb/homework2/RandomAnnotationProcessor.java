@@ -31,9 +31,13 @@ public class RandomAnnotationProcessor {
         long min = anno.min();
         long max = anno.max();
         String zone = anno.zone();
-        long result = random.nextLong(min, max);
 
         try {
+            if (max <= min) {
+                throw new RuntimeException(String.format("Неверные значения min(%s)/max(%s):"+
+                        " значение max должно быть больше min", min, max));
+            }
+            long result = random.nextLong(min, max);
             field.setAccessible(true); //Разрешаем редактирование приватных полей
 
             if (type.isAssignableFrom(Date.class)) {
@@ -59,12 +63,13 @@ public class RandomAnnotationProcessor {
         Random anno = field.getAnnotation(Random.class);
         int min = anno.min();
         int max = anno.max();
-        long result = random.nextLong(min, max);
-
         try {
+            if (max <= min) throw new RuntimeException(String.format("Неверные значения min(%s)/max(%s):"+
+                    " значение max должно быть больше min", min, max));
+            int result = random.nextInt(min, max);
             field.setAccessible(true);
             if (type.isAssignableFrom(int.class) || type.isAssignableFrom(Integer.class)) {
-                field.set(obj, (int) result);
+                field.set(obj, result);
             }
         } catch (Exception e) {
             e.printStackTrace();
