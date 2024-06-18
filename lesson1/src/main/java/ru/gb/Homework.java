@@ -44,8 +44,7 @@ public class Homework {
      * Найти самого молодого сотрудника
      */
     static Optional<Person> findMostYoungestPerson(List<Person> people) {
-        return people
-                .stream()
+        return people.stream()
                 .min(Comparator.comparingInt(Person::getAge));
     }
 
