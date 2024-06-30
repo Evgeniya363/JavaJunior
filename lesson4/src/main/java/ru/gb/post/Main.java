@@ -42,7 +42,7 @@ public class Main {
         try (Session session = sessionFactory.openSession()) {
             User user1 = new User();
             user1.setId(1L);
-            user1.setName("John");
+            user1.setName("Bob");
 
             User user2 = new User();
             user2.setId(2L);
