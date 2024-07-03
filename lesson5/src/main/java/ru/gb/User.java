@@ -1,4 +1,4 @@
-package ru.gb.lesson5;
+package ru.gb;
 
 public class User {
 

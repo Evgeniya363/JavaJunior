@@ -1,4 +1,4 @@
-package ru.gb.lesson5;
+package ru.gb;
 
 /**
  * {
@@ -16,6 +16,12 @@ public class SendMessageRequest extends AbstractRequest {
 
   public SendMessageRequest() {
     setType(TYPE);
+  }
+
+  public SendMessageRequest(String recipient, String message) {
+    this();
+    this.recipient = recipient;
+    this.message = message;
   }
 
   public String getRecipient() {
