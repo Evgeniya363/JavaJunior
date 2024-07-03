@@ -1,4 +1,4 @@
-package ru.gb.lesson5;
+package ru.gb;
 
 /**
  * {
@@ -6,7 +6,15 @@ package ru.gb.lesson5;
  *   "login": "nagibator"
  * }
  */
-public class LoginRequest {
+public class LoginRequest extends AbstractRequest {
+  public LoginRequest(String login) {
+    this();
+    this.login = login;
+  }
+
+  public LoginRequest() {
+    setType("LoginRequest");
+  }
 
   private String login;
 
@@ -17,4 +25,5 @@ public class LoginRequest {
   public void setLogin(String login) {
     this.login = login;
   }
+
 }

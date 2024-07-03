@@ -1,8 +1,8 @@
-package ru.gb.lesson5;
+package ru.gb;
 
 public class AbstractRequest {
 
-  private String type;
+  protected String type;
 
   public String getType() {
     return type;

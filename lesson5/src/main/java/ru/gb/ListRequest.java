@@ -1,19 +1,16 @@
-package ru.gb.lesson5;
+package ru.gb;
 
 /**
  * {
  *   "type": "users"
  * }
  */
-public class ListRequest {
+public class ListRequest extends AbstractRequest{
+  public static final String TYPE = "ListRequest";
 
-  private String type;
 
-  public String getType() {
-    return type;
+  public ListRequest() {
+    setType(TYPE);
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
 }
